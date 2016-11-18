@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="../js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mock-min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../mock/list.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$.ajax({
+					type:"get",
+					url:"http://127.0.0.1:8020/list/",
+					async:true,
+					dataType:"json",
+					success:function(data){
+						//console.log(data);
+						$.each(data.list, function(i,obj) {
+							console.log(obj.title);
+						});
+					}
+				});
+			})
+		</script>
+	</body>
+</html>
